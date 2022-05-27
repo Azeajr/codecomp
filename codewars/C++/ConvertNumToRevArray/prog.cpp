@@ -6,15 +6,10 @@
 std::vector<int> digitize(unsigned long n) {
   std::vector<int> result;
 
-  if (n == 0) {
-    result.push_back(n);
-    return result;
-  }
-
-  while (n > 0) {
+  do {
     result.push_back(n % 10);
     n /= 10;
-  }
+  } while (n != 0);
 
   return result;
 }
