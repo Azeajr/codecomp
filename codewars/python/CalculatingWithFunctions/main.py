@@ -1,80 +1,57 @@
-from functools import partial
+def zero(f=None):
+    return 0 if not f else f(0)
 
 
-def zero(f=lambda: 0):
-    if type(f) is partial:
-        return f(0)
-    return f
+def one(f=None):
+    return 1 if not f else f(1)
 
 
-def one(f=lambda: 1):
-    if type(f) is partial:
-        return f(1)
-    return f
+def two(f=None):
+    return 2 if not f else f(2)
 
 
-def two(f=lambda: 2):
-    if type(f) is partial:
-        return f(2)
-    return f
+def three(f=None):
+    return 3 if not f else f(3)
 
 
-def three(f=lambda: 3):
-    if type(f) is partial:
-        return f(3)
-    return f
+def four(f=None):
+    return 4 if not f else f(4)
 
 
-def four(f=lambda: 4):
-    if type(f) is partial:
-        return f(4)
-    return f
+def five(f=None):
+    return 5 if not f else f(5)
 
 
-def five(f=lambda: 5):
-    if type(f) is partial:
-        return f(5)
-    return f
+def six(f=None):
+    return 6 if not f else f(6)
 
 
-def six(f=lambda: 6):
-    if type(f) is partial:
-        return f(6)
-    return f
+def seven(f=None):
+    return 7 if not f else f(7)
 
 
-def seven(f=lambda: 7):
-    if type(f) is partial:
-        return f(7)
-    return f
+def eight(f=None):
+    return 8 if not f else f(8)
 
 
-def eight(f=lambda: 8):
-    if type(f) is partial:
-        return f(8)
-    return f
+def nine(f=None):
+    return 9 if not f else f(9)
 
 
-def nine(f=lambda: 9):
-    if type(f) is partial:
-        return f(9)
-    return f
+def plus(y):
+    return lambda x: x + y
 
 
-def plus(f):
-    return partial(lambda x, y: x + y, f())
+def minus(y):
+    return lambda x: x - y
 
 
-def minus(f):
-    return partial(lambda x, y: y - x, f())
+def times(y):
+    return lambda x: x * y
 
 
-def times(f):
-    return partial(lambda x, y: x * y, f())
-
-
-def divided_by(f):
-    return partial(lambda x, y: y // x, f())
+def divided_by(y):
+    return lambda x: x // y
 
 
 # print(plus(one()))
